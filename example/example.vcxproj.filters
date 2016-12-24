@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDirectoryWatcher\src\ofxDirectoryWatcher.cpp">
+			<Filter>addons\ofxDirectoryWatcher\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcher.cpp">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherLinux.cpp">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherOSX.cpp">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherWin32.cpp">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDirectoryWatcher">
+			<UniqueIdentifier>{4664BB30-B65E-ECF4-7B55-B96F}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDirectoryWatcher\src">
+			<UniqueIdentifier>{9D9E599D-A0B4-9779-321E-3E8B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDirectoryWatcher\libs">
+			<UniqueIdentifier>{6FE5E468-15F7-AAF6-128B-8E4C}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDirectoryWatcher\libs\FileWatcher">
+			<UniqueIdentifier>{59949235-585D-CBA2-8F0D-FACD}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDirectoryWatcher\libs\FileWatcher\src">
+			<UniqueIdentifier>{091DE2D3-3CB8-AB7D-F394-1E0B}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\src\ofxDirectoryWatcher.h">
+			<Filter>addons\ofxDirectoryWatcher\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcher.h">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherImpl.h">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherLinux.h">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherOSX.h">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxDirectoryWatcher\libs\FileWatcher\src\FileWatcherWin32.h">
+			<Filter>addons\ofxDirectoryWatcher\libs\FileWatcher\src</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>

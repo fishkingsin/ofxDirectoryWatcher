@@ -79,7 +79,7 @@
 #			if defined(UNICODE)
 				{
 					lstrcpynW(szFile, pNotify->FileName,
-						min(MAX_PATH, pNotify->FileNameLength / sizeof(WCHAR) + 1));
+						min(MAX_PATH,int(pNotify->FileNameLength / sizeof(WCHAR) + 1)));
 				}
 #			else
 				{
@@ -89,8 +89,9 @@
 					szFile[count] = TEXT('\0');
 				}
 #			endif
-
-				pWatch->mFileWatcher->handleAction(pWatch, szFile, pNotify->Action);
+				wstring wstr(&szFile[0]); //convert to wstring
+				string str(wstr.begin(), wstr.end());
+				pWatch->mFileWatcher->handleAction(pWatch, str, pNotify->Action);
 
 			} while (pNotify->NextEntryOffset != 0);
 		}
@@ -133,19 +134,19 @@
 	}
 
 	/// Starts monitoring a directory.
-	WatchStruct* CreateWatch(LPCTSTR szDirectory, DWORD mNotifyFilter)
+	WatchStruct* CreateWatch(LPCSTR szDirectory, DWORD mNotifyFilter)
 	{
 		WatchStruct* pWatch;
 		size_t ptrsize = sizeof(*pWatch);
 		pWatch = static_cast<WatchStruct*>(HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, ptrsize));
-
-		pWatch->mDirHandle = CreateFile(szDirectory, FILE_LIST_DIRECTORY,
+		
+		pWatch->mDirHandle = CreateFileA(szDirectory, FILE_LIST_DIRECTORY,
 			FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, NULL,
 			OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS | FILE_FLAG_OVERLAPPED, NULL);
 
 		if (pWatch->mDirHandle != INVALID_HANDLE_VALUE)
 		{
-			pWatch->mOverlapped.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+			pWatch->mOverlapped.hEvent = CreateEventA(NULL, TRUE, FALSE, NULL);
 			pWatch->mNotifyFilter = mNotifyFilter;
 
 			if (RefreshWatch(pWatch))
@@ -187,8 +188,8 @@
 	WatchID FileWatcherWin32::addWatch(const String& directory, FileWatchListener* watcher)
 	{
 		WatchID watchid = ++mLastWatchID;
-
-		WatchStruct* watch = CreateWatch(directory.c_str(),
+		LPCSTR str = LPCSTR(directory.c_str());
+		WatchStruct* watch = CreateWatch(str ,
 			FILE_NOTIFY_CHANGE_CREATION | FILE_NOTIFY_CHANGE_SIZE | FILE_NOTIFY_CHANGE_FILE_NAME);
 
 		if(!watch)

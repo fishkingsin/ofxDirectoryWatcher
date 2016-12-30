@@ -163,7 +163,11 @@ protected:
                           FileWatcher::Action action) {
         
         ofxDirectoryEventType evt = (ofxDirectoryEventType)0;
+#if defined(_WIN32)
+        ofFile f(dir+"\\"+filename);
+#else
         ofFile f(filename);
+#endif
 
         // not all events are supported yet
         if(action == FileWatcher::Add) {
